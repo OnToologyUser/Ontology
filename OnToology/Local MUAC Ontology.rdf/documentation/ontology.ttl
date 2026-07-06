@@ -1,0 +1,963 @@
+@prefix : <http://www.example.org/muac/ontology/local-moo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/muac/ontology/local-moo#> .
+
+<http://www.example.org/muac/ontology/local-moo> rdf:type owl:Ontology ;
+                                                  rdfs:comment """Convention for naming relations (Object Properties)
+
+1. The Active-Passive Pattern (most relations)
+* Forward Relation: Active verb in the present tense (e.g., employs, teaches, owns).
+  - Points from the independent entity (Whole), active agent (Actor), or creator to the   dependent entity (Part), passive object (Target), or creation. 
+* Reverse Relation: Passive voice or reciprocal verb (e.g., is_employed_by, is_taught_by, is_owned_by).
+Example:
+ - Forward: Organization employs Person
+ - Reverse: Person is_employed_by Organization
+
+2. The Has-Is-Of Pattern (hiearchical relations)
+* Forward Relation: Starts with has_ to indicate ownership, composition, or property.
+* Reverse Relation: Starts with is_ or ends with _of to point back to the subject.
+Example:
+ - Forward: Car has_part Engine
+ - Reverse: Engine is_part_of Car
+
+Determines property direction based on priority: Forward relations point from the independent entity (Whole), active agent (Actor), or creator to the dependent entity (Part), passive object (Target), or creation.""" ,
+                                                               """TODO:
+- Capabilities are realized by Flows
+- Function Exchanges are allocated to Structure Exchanges""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+<http://www.w3.org/2004/02/skos/core#editorialNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+<http://www.w3.org/2004/02/skos/core#scopeNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/muac_onto/hasMode
+<http://example.org/muac_onto/hasMode> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/muac_onto/Phase> ;
+                                       rdfs:range <http://example.org/muac_onto/Mode> .
+
+
+###  http://example.org/muac_onto/hasPhase
+<http://example.org/muac_onto/hasPhase> rdf:type owl:ObjectProperty ;
+                                        rdfs:range <http://example.org/muac_onto/Phase> .
+
+
+###  http://example.org/muac_onto/hasState
+<http://example.org/muac_onto/hasState> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://example.org/muac_onto/Mode> ;
+                                        rdfs:range <http://example.org/muac_onto/State> .
+
+
+###  http://www.example.org/muac/ontology/local-moo#conveysExchangeItem
+:conveysExchangeItem rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     owl:inverseOf :isConveyedByFE ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :Functional_Exchange ;
+                     rdfs:range :Exchange_Item .
+
+
+###  http://www.example.org/muac/ontology/local-moo#groupsDataClass
+:groupsDataClass rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf :isGroupedInExchangeItem ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :Exchange_Item ;
+                 rdfs:range :Data_Class .
+
+
+###  http://www.example.org/muac/ontology/local-moo#groupsExchangeItem
+:groupsExchangeItem rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :isGroupedInInterface ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Interface ;
+                    rdfs:range :Exchange_Item .
+
+
+###  http://www.example.org/muac/ontology/local-moo#hasDirectPart
+:hasDirectPart rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasPart ;
+               owl:inverseOf :isDirectPartOf ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty .
+
+
+###  http://www.example.org/muac/ontology/local-moo#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isPartOf ;
+         rdf:type owl:TransitiveProperty .
+
+
+###  http://www.example.org/muac/ontology/local-moo#hasSourceFunction
+:hasSourceFunction rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isSourceOfFunctionalExchange ;
+                   rdf:type owl:FunctionalProperty ,
+                            owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Functional_Exchange ;
+                   rdfs:range :Function .
+
+
+###  http://www.example.org/muac/ontology/local-moo#hasSourceStructure
+:hasSourceStructure rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :isSourceOfStructureExchange ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Structural_Exchange ;
+                    rdfs:range :Structural_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#hasTargetFunction
+:hasTargetFunction rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isTargetOfFunctionalExchange ;
+                   rdf:type owl:FunctionalProperty ,
+                            owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Functional_Exchange ;
+                   rdfs:range :Function .
+
+
+###  http://www.example.org/muac/ontology/local-moo#hasTargetStructure
+:hasTargetStructure rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :isTargetOfStructureExchange ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Structural_Exchange ;
+                    rdfs:range :Structural_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isConveyedByFE
+:isConveyedByFE rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isDirectPartOf
+:isDirectPartOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :isPartOf ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Structural_Element ;
+                rdfs:range :Structural_Element ;
+                rdfs:comment "This will be constrained in the class with min 2, transitive does not work with that constraint. To not loose the transitive part  that rolls up from lowest level till its highest level, this is created as a child but with Assymetric & Irreflexive. The isDirectPartOf is expected to roll up due to the parent. Should then onlu this type of link be used??" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isGroupedInExchangeItem
+:isGroupedInExchangeItem rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isGroupedInInterface
+:isGroupedInInterface rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isOperatedBy
+:isOperatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :operatesSystem .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isOwnedBy
+:isOwnedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :ownsAsset ;
+           rdfs:domain :System_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:domain :Structural_Element ;
+          rdfs:range :Structural_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isPerformedByStructure
+:isPerformedByStructure rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :performsAction .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement
+:isPerformedBySystemElement rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            owl:inverseOf :performsFunction .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isProvidedByStructure
+:isProvidedByStructure rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :provides ;
+                       owl:inverseOf :isProvidedByStructure ;
+                       rdfs:domain :Desired_Characteristic ;
+                       rdfs:range :Structural_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement
+:isProvidedBySystemElement rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :provides ;
+                           owl:inverseOf :providesCapability ;
+                           rdfs:domain :System_Capability ;
+                           rdfs:range :System_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isRealizedBy
+:isRealizedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :realizesInterface .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isResponsibilityOf
+:isResponsibilityOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :responsibleForTask .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isSequencedIn
+:isSequencedIn rdf:type owl:ObjectProperty ;
+               owl:inverseOf :sequencesBlock ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :Action_Block ;
+               rdfs:range :Composite_Action_Flow .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange
+:isSourceOfFunctionalExchange rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty ,
+                                       owl:IrreflexiveProperty ;
+                              rdfs:domain :Function ;
+                              rdfs:range :Functional_Exchange .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange
+:isSourceOfStructureExchange rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdf:type owl:AsymmetricProperty ,
+                                      owl:IrreflexiveProperty ;
+                             rdfs:domain :Structural_Element ;
+                             rdfs:range :Structural_Exchange .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange
+:isTargetOfFunctionalExchange rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty ,
+                                       owl:IrreflexiveProperty ;
+                              rdfs:domain :Function ;
+                              rdfs:range :Functional_Exchange .
+
+
+###  http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange
+:isTargetOfStructureExchange rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdf:type owl:AsymmetricProperty ,
+                                      owl:IrreflexiveProperty ;
+                             rdfs:domain :Structural_Element ;
+                             rdfs:range :Structural_Exchange .
+
+
+###  http://www.example.org/muac/ontology/local-moo#operatesSystem
+:operatesSystem rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Operational_Actor ;
+                rdfs:range :System_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#ownsAsset
+:ownsAsset rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:range :System_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#performsAction
+:performsAction rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Structural_Element ;
+                rdfs:range :Action_Block .
+
+
+###  http://www.example.org/muac/ontology/local-moo#performsFunction
+:performsFunction rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :System_Element ;
+                  rdfs:range :Function .
+
+
+###  http://www.example.org/muac/ontology/local-moo#provides
+:provides rdf:type owl:ObjectProperty .
+
+
+###  http://www.example.org/muac/ontology/local-moo#providesCapability
+:providesCapability rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :provides ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :System_Element ;
+                    rdfs:range :System_Capability .
+
+
+###  http://www.example.org/muac/ontology/local-moo#providesCharacteristic
+:providesCharacteristic rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :provides ;
+                        rdfs:domain :Structural_Element ;
+                        rdfs:range :Desired_Characteristic .
+
+
+###  http://www.example.org/muac/ontology/local-moo#realizesInterface
+:realizesInterface rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Structural_Exchange ;
+                   rdfs:range :Interface .
+
+
+###  http://www.example.org/muac/ontology/local-moo#responsibleForTask
+:responsibleForTask rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Operational_Actor ;
+                    rdfs:range :Task .
+
+
+###  http://www.example.org/muac/ontology/local-moo#sequencesBlock
+:sequencesBlock rdf:type owl:ObjectProperty ,
+                         owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Composite_Action_Flow ;
+                rdfs:range :Action_Block .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/muac_onto/sequenceNum
+<http://example.org/muac_onto/sequenceNum> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <http://example.org/muac_onto/Phase> ;
+                                           rdfs:range xsd:int .
+
+
+###  http://www.example.org/muac/ontology/local-moo#hasImplementationLevel
+:hasImplementationLevel rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Product ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.example.org/muac/ontology/local-moo#is_MUAC
+:is_MUAC rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Organizational_Element ;
+         rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/muac_onto/Mode
+<http://example.org/muac_onto/Mode> rdf:type owl:Class ;
+                                    rdfs:subClassOf :Behavioral_Interval ;
+                                    <http://purl.org/dc/elements/1.1/source> "Wasson, C.S. (2011), 3.3.1 System Phases, Modes, and States: Solutions to Controversial Issues. INCOSE International Symposium, 21: 279-294. https://doi.org/10.1002/j.2334-5837.2011.tb01205.x" ;
+                                    rdfs:label "Mode"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> """An abstract label applied to a user selectable option that enables a set of use case-based system capabilities to be employed in conjunction with organizational processes and procedures to command and control (C2) a system, product, or service to achieve a specified set of mission objectives, outcomes, and levels of performance. Triggering events serve as entry and exit
+criteria for transitioning into and out of a mode. Modes can have sub-modes.""" ;
+                                    <http://www.w3.org/2004/02/skos/core#example> "When a system is in a failed state, the supervisor can make the decision to switch mode of operation from primary to fallback operations. This mode change causes the state of the fallback system to be Operational" .
+
+
+###  http://example.org/muac_onto/Phase
+<http://example.org/muac_onto/Phase> rdf:type owl:Class ;
+                                     rdfs:subClassOf :Behavioral_Interval ;
+                                     <http://purl.org/dc/elements/1.1/source> "Wasson, C.S. (2011), 3.3.1 System Phases, Modes, and States: Solutions to Controversial Issues. INCOSE International Symposium, 21: 279-294. https://doi.org/10.1002/j.2334-5837.2011.tb01205.x" ;
+                                     rdfs:label "Phase"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "A designation applied to segments of the System / Product Life Cycle or Mission Lifecycle of a system, product – e.g., Pre-Mission, Mission, or Post-Mission. Phases may consist of sub-phases – e.g., an aircraft’s Mission Phase of operations may be partitioned into Phases of Flight (subphases) such as take-off, ascent, cruise, or land." ;
+                                     <http://www.w3.org/2004/02/skos/core#example> "A flight consists of seven primary phases: preflight, taxi, takeoff, climb, cruise, descent and approach, and landing/roll-out" ;
+                                     <http://www.w3.org/2004/02/skos/core#scopeNote> "Use phase only to describe lifecycle stages of a system, mission/operation i.e time sequencing is relevant" .
+
+
+###  http://example.org/muac_onto/State
+<http://example.org/muac_onto/State> rdf:type owl:Class ;
+                                     rdfs:subClassOf :Behavioral_Interval ;
+                                     <http://purl.org/dc/elements/1.1/source> "Wasson, C.S. (2011), 3.3.1 System Phases, Modes, and States: Solutions to Controversial Issues. INCOSE International Symposium, 21: 279-294. https://doi.org/10.1002/j.2334-5837.2011.tb01205.x" ;
+                                     rdfs:label "State"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "An attribute used to characterize the current logistical employment, status, or performance-base condition of a system, product, or service or system components at the element, subsystem, assembly, subassembly, etc. levels of abstraction. Based on principles of physics, “states” are observable, measurable, verifiable." ;
+                                     <http://www.w3.org/2004/02/skos/core#editorialNote> "The state vs phase confusion is large e.g ICAO defines INCERFA, ALERFA as phases. This contradicts definitions of Wasson as  these designations represent condition-based safety or readiness conditions rather than planned, time-based segments of a mission, placing them under the definition of system states." ;
+                                     <http://www.w3.org/2004/02/skos/core#example> "A system element is nominal state when it performs its intended functions. Physical failures or changes in its environment can cause it not to perform intended functions or even performed unintended functions then this system element is in a failed state." ;
+                                     <http://www.w3.org/2004/02/skos/core#note> "Usually states are described using past-participle verbs, taxiing, cruising, operating. A flight during its taxi phase is in taxiing state. Phase and state can be confused as there is no discriminator as user control for states vs modes." ;
+                                     <http://www.w3.org/2004/02/skos/core#scopeNote> "Use states to describe the active behavior of system elements or the outcome of their behaviors." .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Action_Block
+:Action_Block rdf:type owl:Class ;
+              rdfs:subClassOf :Action_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Action_Element
+:Action_Element rdf:type owl:Class .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Action_Flow
+:Action_Flow rdf:type owl:Class ;
+             rdfs:subClassOf :Action_Element ;
+             rdfs:comment "A sequencing of individual actions to achieve a higher level objective." .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Aircraft_System
+:Aircraft_System rdf:type owl:Class ;
+                 rdfs:subClassOf :System_Element ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isPartOf ;
+                                   owl:someValuesFrom :Enterprise_System
+                                 ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow
+:Atomic_Action_Flow rdf:type owl:Class ;
+                    rdfs:subClassOf :Action_Flow ;
+                    owl:disjointWith :Composite_Action_Flow ;
+                    rdfs:comment "A flow fragment, the arrow, only magnitude no direction" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Behavioral_Interval
+:Behavioral_Interval rdf:type owl:Class .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Business_Capability
+:Business_Capability rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Capability
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :isProvidedBySystemElement ;
+                                                                  owl:someValuesFrom :Enterprise_System
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Capability .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Capability
+:Capability rdf:type owl:Class ;
+            rdfs:subClassOf :Desired_Characteristic .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow
+:Composite_Action_Flow rdf:type owl:Class ;
+                       rdfs:subClassOf :Action_Flow ;
+                       rdfs:comment "A sequnced flow of atomic flows and the structural elements that perform them" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Constraint
+:Constraint rdf:type owl:Class ;
+            rdfs:subClassOf :Desired_Characteristic .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Data_Class
+:Data_Class rdf:type owl:Class ;
+            rdfs:subClassOf :Data_Model_Element ;
+            rdfs:comment """Description of an atomic Data Element. Example:
+AircraftPerformance
+- speed : m/s
+- rate_of_climb : m/s
+- thrus_specific_fuel_consumption: g/(s * kN)""" ,
+                         "This is documented in ASN.1" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Data_Model_Element
+:Data_Model_Element rdf:type owl:Class ;
+                    rdfs:comment "Represents foundational system information entities, resources, or state variables in isolation, independent of their communication or transport mechanisms." .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Desired_Characteristic
+:Desired_Characteristic rdf:type owl:Class .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Enterprise_System
+:Enterprise_System rdf:type owl:Class ;
+                   rdfs:subClassOf :System_Element ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasDirectPart ;
+                                     owl:someValuesFrom :Aircraft_System
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasDirectPart ;
+                                     owl:someValuesFrom :Operational_System
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasDirectPart ;
+                                     owl:someValuesFrom :Organizational_Element
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasPart ;
+                                     owl:someValuesFrom :Support_System
+                                   ] ;
+                   rdfs:comment "Here definition is based on inverse relation hasPart as it is the highest level, it cannot be part of anything else, or at least for this scope of work." .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Exchange_Item
+:Exchange_Item rdf:type owl:Class ;
+               rdfs:subClassOf :Data_Model_Element ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :groupsDataClass ;
+                                 owl:someValuesFrom :Data_Class
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isConveyedByFE ;
+                                 owl:someValuesFrom :Functional_Exchange
+                               ] ;
+               rdfs:comment "This is docuemented in MIDD" ,
+                            """https://mbse-capella.org/resources/arcadia-reference/Arcadia%20Language%20-%20MetaModel.pdf
+An ordered set of references to elements routed together, during an interaction or exchange between functions, components and actors. For MUAC this is the MIDD part of the data_flow i.e the communication and control objects?""" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#External_Organization
+:External_Organization rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Organizational_Element
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :is_MUAC ;
+                                                                    owl:hasValue "false"^^xsd:boolean
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Organizational_Element ;
+                       owl:disjointWith :Internal_Organization .
+
+
+###  http://www.example.org/muac/ontology/local-moo#External_Product
+:External_Product rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Product
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :isOwnedBy ;
+                                                               owl:someValuesFrom :External_Organization
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :Product ;
+                  owl:disjointWith :Internal_Product .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Function
+:Function rdf:type owl:Class ;
+          rdfs:subClassOf :Action_Block ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isPerformedBySystemElement ;
+                            owl:someValuesFrom :System_Element
+                          ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Functional_Exchange
+:Functional_Exchange rdf:type owl:Class ;
+                     rdfs:subClassOf :Atomic_Action_Flow ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasSourceFunction ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Function
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasTargetFunction ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Function
+                                     ] ;
+                     rdfs:comment """https://mbse-capella.org/resources/arcadia-reference/Arcadia%20Language%20-%20MetaModel.pdf
+A possible interaction between a source function and a destination function, likely to transmit exchange items through their output and input ports, respectively
+
+A Functional Exchange represents the connection (the 'what' and 'where') between two functions, defining the flow of data, material, or signals.""" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Infra_Product
+:Infra_Product rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Product
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isDirectPartOf ;
+                                                            owl:someValuesFrom :Product_System
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isDirectPartOf ;
+                                                            owl:someValuesFrom :Support_System
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Product ;
+               rdfs:comment "Sharing across partitions e.g electra, hvac, building" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Interface
+:Interface rdf:type owl:Class ;
+           rdfs:subClassOf :Data_Model_Element ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :groupsExchangeItem ;
+                             owl:someValuesFrom :Exchange_Item
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isRealizedBy ;
+                             owl:someValuesFrom :Structural_Exchange
+                           ] ;
+           rdfs:comment "This would be covered in an Interface Definition Document" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Internal_Organization
+:Internal_Organization rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Organizational_Element
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :is_MUAC ;
+                                                                    owl:hasValue "true"^^xsd:boolean
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Organizational_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Internal_Product
+:Internal_Product rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Product
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :isOwnedBy ;
+                                                               owl:someValuesFrom :Internal_Organization
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :Product .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Operational_Actor
+:Operational_Actor rdf:type owl:Class ;
+                   rdfs:subClassOf :Organizational_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Operational_Environment
+:Operational_Environment rdf:type owl:Class ;
+                         rdfs:subClassOf :Desired_Characteristic .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Operational_Product
+:Operational_Product rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Product
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :isDirectPartOf ;
+                                                                  owl:someValuesFrom :Product_System
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Product .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Operational_System
+:Operational_System rdf:type owl:Class ;
+                    rdfs:subClassOf :System_Element ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :isPartOf ;
+                                      owl:someValuesFrom :Enterprise_System
+                                    ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Operations_Phase
+:Operations_Phase rdf:type owl:Class ;
+                  rdfs:subClassOf <http://example.org/muac_onto/Phase> .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Operator
+:Operator rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Operational_Actor
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :operatesSystem ;
+                                                       owl:someValuesFrom :Operational_System
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Operational_Actor .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Organizational_Element
+:Organizational_Element rdf:type owl:Class ;
+                        rdfs:subClassOf :Structural_Element ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :isDirectPartOf ;
+                                          owl:someValuesFrom :Enterprise_System
+                                        ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Organizational_Process
+:Organizational_Process rdf:type owl:Class ;
+                        rdfs:subClassOf [ owl:intersectionOf ( :Composite_Action_Flow
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :sequencesBlock ;
+                                                                 owl:someValuesFrom :Task
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :sequencesBlock ;
+                                                                 owl:allValuesFrom [ owl:intersectionOf ( :Task
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty :isResponsibilityOf ;
+                                                                                                            owl:someValuesFrom :Operational_Actor
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ]
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                        owl:disjointWith :System_Process ;
+                        rdfs:comment """1. It is a composite flow.
+2.It must contain at least one business Task (ensuring it isn't an empty process).
+3.Crucially, every single block inside it must exclusively be a Task that has a assigned, responsible Operational_Actor attached to it.""" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Performance
+:Performance rdf:type owl:Class ;
+             rdfs:subClassOf :Desired_Characteristic .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Pilot
+:Pilot rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Operational_Actor
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :operatesSystem ;
+                                                    owl:someValuesFrom :Aircraft_System
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Operational_Actor .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Product
+:Product rdf:type owl:Class ;
+         rdfs:subClassOf :System_Element ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isDirectPartOf ;
+                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Product_System
+                                                              :Support_System
+                                                            )
+                                              ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImplementationLevel ;
+                           owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                               owl:oneOf [ rdf:type rdf:List ;
+                                                           rdf:first "Component" ;
+                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                      rdf:first "Library" ;
+                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                 rdf:first "Subsystem" ;
+                                                                                 rdf:rest rdf:nil
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                             ]
+                         ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Product_System
+:Product_System rdf:type owl:Class ;
+                rdfs:subClassOf :System_Element ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isDirectPartOf ;
+                                  owl:someValuesFrom :Operational_System
+                                ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Shared_Product
+:Shared_Product rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Product
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :isDirectPartOf ;
+                                                             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :Product_System
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Product .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Structural_Element
+:Structural_Element rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :performsAction ;
+                                      owl:someValuesFrom :Action_Block
+                                    ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Structural_Exchange
+:Structural_Exchange rdf:type owl:Class ;
+                     rdfs:subClassOf :Atomic_Action_Flow ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasSourceStructure ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Structural_Element
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasTargetStructure ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Structural_Element
+                                     ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Support_Product
+:Support_Product rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Product
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isDirectPartOf ;
+                                                              owl:someValuesFrom :Support_System
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Product ;
+                 rdfs:comment "e.g GBS, Tools, Non-Critical Data feeders like DWH" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Support_System
+:Support_System rdf:type owl:Class ;
+                rdfs:subClassOf :System_Element ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isDirectPartOf ;
+                                  owl:someValuesFrom :Enterprise_System
+                                ] ;
+                rdfs:comment "A distinct, structured combination of hardware, software, processes, or personnel that interacts with the Operational System during its lifecycle to enable its availability, reliability, security, or continuous improvement. It does not directly produce the primary operational output (e.g., separating aircraft), but it provides the essential environment, data, or services required for the Operational System to do so." ,
+                             """Core Criteria for a Support System
+
+Mission Indirectness: If the support system fails entirely, the Operational System doesn't instantly crash mid-operation, but the organization's ability to maintain, deploy, or legally operate that system degrades immediately.
+
+Lifecycle Focus: It often operates on a different rhythm than the real-time operational loop—focusing instead on preparation, maintenance, training, or post-operational analysis.
+
+Shared or Dedicated Infrastructure: It can be internal (e.g., a local test bed) or external (e.g., a commercial satellite communications network provider or third-party weather data feed""" .
+
+
+###  http://www.example.org/muac/ontology/local-moo#System_Capability
+:System_Capability rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Capability
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isProvidedBySystemElement ;
+                                                                owl:someValuesFrom :Operational_System
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :Capability .
+
+
+###  http://www.example.org/muac/ontology/local-moo#System_Element
+:System_Element rdf:type owl:Class ;
+                rdfs:subClassOf :Structural_Element .
+
+
+###  http://www.example.org/muac/ontology/local-moo#System_Phase
+:System_Phase rdf:type owl:Class ;
+              rdfs:subClassOf <http://example.org/muac_onto/Phase> .
+
+
+###  http://www.example.org/muac/ontology/local-moo#System_Process
+:System_Process rdf:type owl:Class ;
+                rdfs:subClassOf [ owl:intersectionOf ( :Composite_Action_Flow
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :sequencesBlock ;
+                                                         owl:someValuesFrom :Function
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :sequencesBlock ;
+                                                         owl:allValuesFrom [ owl:intersectionOf ( :Function
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty :isPerformedBySystemElement ;
+                                                                                                    owl:someValuesFrom :System_Element
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf :Action_Block ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isResponsibilityOf ;
+                        owl:someValuesFrom :Operational_Actor
+                      ] .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Technician
+:Technician rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Operational_Actor
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :operatesSystem ;
+                                                         owl:someValuesFrom :Support_System
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Operational_Actor .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Use-Case
+:Use-Case rdf:type owl:Class ;
+          rdfs:subClassOf :Composite_Action_Flow .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/muac/ontology/local-moo#Test_System
+:Test_System rdf:type owl:NamedIndividual ,
+                      :Support_System .
+
+
+###  http://www.example.org/muac/ontology/local-moo#Test_Tool
+:Test_Tool rdf:type owl:NamedIndividual ,
+                    :Product ;
+           :isPartOf :Test_System .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

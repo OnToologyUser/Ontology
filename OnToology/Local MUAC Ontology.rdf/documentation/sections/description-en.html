@@ -1,0 +1,20 @@
+<h2 id="desc" class="list">[Ontology Name]: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">Convention for naming relations (Object Properties)
+
+1. The Active-Passive Pattern (most relations)
+* Forward Relation: Active verb in the present tense (e.g., employs, teaches, owns).
+  - Points from the independent entity (Whole), active agent (Actor), or creator to the   dependent entity (Part), passive object (Target), or creation. 
+* Reverse Relation: Passive voice or reciprocal verb (e.g., is_employed_by, is_taught_by, is_owned_by).
+Example:
+ - Forward: Organization employs Person
+ - Reverse: Person is_employed_by Organization
+
+2. The Has-Is-Of Pattern (hiearchical relations)
+* Forward Relation: Starts with has_ to indicate ownership, composition, or property.
+* Reverse Relation: Starts with is_ or ends with _of to point back to the subject.
+Example:
+ - Forward: Car has_part Engine
+ - Reverse: Engine is_part_of Car
+
+Determines property direction based on priority: Forward relations point from the independent entity (Whole), active agent (Actor), or creator to the dependent entity (Part), passive object (Target), or creation.</span>
