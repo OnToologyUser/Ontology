@@ -19,28 +19,18 @@ It is obvious that not all the pitfalls are equally important; their impact in t
 
 
 
-#### P11. Missing domain or range in properties <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/important.png" height="15px"> (14 cases detected).
-*Object and/or datatype properties without domain or range (or none of them) are included in the ontology.*
-
-    
-
 #### P05. Defining wrong inverse relationships <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/critical.png" height="15px"> (1 cases detected).
 *Two relationships are defined as inverse relations when they are not necessarily inverse.*
 
     
 
-#### P04. Creating unconnected ontology elements <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/minor.png" height="15px"> (3 cases detected).
-*Ontology elements (classes, object properties and datatype properties) are created isolated, with no relation to the rest of the ontology.*
+#### P08. Missing annotations <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/minor.png" height="15px"> (90 cases detected).
+*This pitfall consists in creating an ontology element and failing to provide human readable annotations attached to it. Consequently, ontology elements lack annotation properties that label them (e.g. rdfs:label, lemon:LexicalEntry, skos:prefLabel or skos:altLabel) or that define them (e.g. rdfs:comment or dc:description). This pitfall is related to the guidelines provided in [5].*
 
     
 
-#### P25. Defining a relationship as inverse to itself <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/important.png" height="15px"> (1 cases detected).
-*A relationship is defined as inverse of itself. In this case, this relationship could have been defined as owl:SymmetricProperty instead.*
-
-    
-
-#### SUGGESTION: symmetric or transitive object properties.. symmetric or transitive object properties. <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/minor.png" height="15px"> (1 cases detected).
-*The domain and range axioms are equal for each of the following object properties. Could they be symmetric or transitive?*
+#### P11. Missing domain or range in properties <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/important.png" height="15px"> (14 cases detected).
+*Object and/or datatype properties without domain or range (or none of them) are included in the ontology.*
 
     
 
@@ -49,13 +39,23 @@ It is obvious that not all the pitfalls are equally important; their impact in t
 
     
 
+#### P04. Creating unconnected ontology elements <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/minor.png" height="15px"> (3 cases detected).
+*Ontology elements (classes, object properties and datatype properties) are created isolated, with no relation to the rest of the ontology.*
+
+    
+
 #### P13. Inverse relationships not explicitly declared <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/minor.png" height="15px"> (5 cases detected).
 *This pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.*
 
     
 
-#### P08. Missing annotations <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/minor.png" height="15px"> (90 cases detected).
-*This pitfall consists in creating an ontology element and failing to provide human readable annotations attached to it. Consequently, ontology elements lack annotation properties that label them (e.g. rdfs:label, lemon:LexicalEntry, skos:prefLabel or skos:altLabel) or that define them (e.g. rdfs:comment or dc:description). This pitfall is related to the guidelines provided in [5].*
+#### SUGGESTION: symmetric or transitive object properties.. symmetric or transitive object properties. <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/minor.png" height="15px"> (1 cases detected).
+*The domain and range axioms are equal for each of the following object properties. Could they be symmetric or transitive?*
+
+    
+
+#### P25. Defining a relationship as inverse to itself <img src="https://raw.githubusercontent.com/OnToology/oops-report/master/sample/important.png" height="15px"> (1 cases detected).
+*A relationship is defined as inverse of itself. In this case, this relationship could have been defined as owl:SymmetricProperty instead.*
 
     
 
