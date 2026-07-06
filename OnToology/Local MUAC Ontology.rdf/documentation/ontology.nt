@@ -1,0 +1,920 @@
+<http://www.example.org/muac/ontology/local-moo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.example.org/muac/ontology/local-moo> <http://www.w3.org/2000/01/rdf-schema#comment> "Convention for naming relations (Object Properties)\n\n1. The Active-Passive Pattern (most relations)\n* Forward Relation: Active verb in the present tense (e.g., employs, teaches, owns).\n  - Points from the independent entity (Whole), active agent (Actor), or creator to the   dependent entity (Part), passive object (Target), or creation. \n* Reverse Relation: Passive voice or reciprocal verb (e.g., is_employed_by, is_taught_by, is_owned_by).\nExample:\n - Forward: Organization employs Person\n - Reverse: Person is_employed_by Organization\n\n2. The Has-Is-Of Pattern (hiearchical relations)\n* Forward Relation: Starts with has_ to indicate ownership, composition, or property.\n* Reverse Relation: Starts with is_ or ends with _of to point back to the subject.\nExample:\n - Forward: Car has_part Engine\n - Reverse: Engine is_part_of Car\n\nDetermines property direction based on priority: Forward relations point from the independent entity (Whole), active agent (Actor), or creator to the dependent entity (Part), passive object (Target), or creation." .
+<http://www.example.org/muac/ontology/local-moo> <http://www.w3.org/2000/01/rdf-schema#comment> "TODO:\n- Capabilities are realized by Flows\n- Function Exchanges are allocated to Structure Exchanges" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#editorialNote
+<http://www.w3.org/2004/02/skos/core#editorialNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#scopeNote
+<http://www.w3.org/2004/02/skos/core#scopeNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/muac_onto/hasMode
+<http://example.org/muac_onto/hasMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/muac_onto/hasMode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/muac_onto/Phase> .
+<http://example.org/muac_onto/hasMode> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/muac_onto/Mode> .
+# 
+# http://example.org/muac_onto/hasPhase
+<http://example.org/muac_onto/hasPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/muac_onto/hasPhase> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/muac_onto/Phase> .
+# 
+# http://example.org/muac_onto/hasState
+<http://example.org/muac_onto/hasState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/muac_onto/hasState> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/muac_onto/Mode> .
+<http://example.org/muac_onto/hasState> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/muac_onto/State> .
+# 
+# http://www.example.org/muac/ontology/local-moo#conveysExchangeItem
+<http://www.example.org/muac/ontology/local-moo#conveysExchangeItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#conveysExchangeItem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#conveysExchangeItem> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isConveyedByFE> .
+<http://www.example.org/muac/ontology/local-moo#conveysExchangeItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#conveysExchangeItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#conveysExchangeItem> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Functional_Exchange> .
+<http://www.example.org/muac/ontology/local-moo#conveysExchangeItem> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Exchange_Item> .
+# 
+# http://www.example.org/muac/ontology/local-moo#groupsDataClass
+<http://www.example.org/muac/ontology/local-moo#groupsDataClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsDataClass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsDataClass> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isGroupedInExchangeItem> .
+<http://www.example.org/muac/ontology/local-moo#groupsDataClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsDataClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsDataClass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Exchange_Item> .
+<http://www.example.org/muac/ontology/local-moo#groupsDataClass> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Data_Class> .
+# 
+# http://www.example.org/muac/ontology/local-moo#groupsExchangeItem
+<http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isGroupedInInterface> .
+<http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Interface> .
+<http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Exchange_Item> .
+# 
+# http://www.example.org/muac/ontology/local-moo#hasDirectPart
+<http://www.example.org/muac/ontology/local-moo#hasDirectPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasDirectPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.example.org/muac/ontology/local-moo#hasPart> .
+<http://www.example.org/muac/ontology/local-moo#hasDirectPart> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+<http://www.example.org/muac/ontology/local-moo#hasDirectPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasDirectPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+# 
+# http://www.example.org/muac/ontology/local-moo#hasPart
+<http://www.example.org/muac/ontology/local-moo#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasPart> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isPartOf> .
+<http://www.example.org/muac/ontology/local-moo#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+# 
+# http://www.example.org/muac/ontology/local-moo#hasSourceFunction
+<http://www.example.org/muac/ontology/local-moo#hasSourceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceFunction> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Functional_Exchange> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Function> .
+# 
+# http://www.example.org/muac/ontology/local-moo#hasSourceStructure
+<http://www.example.org/muac/ontology/local-moo#hasSourceStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceStructure> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceStructure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Exchange> .
+<http://www.example.org/muac/ontology/local-moo#hasSourceStructure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#hasTargetFunction
+<http://www.example.org/muac/ontology/local-moo#hasTargetFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetFunction> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Functional_Exchange> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Function> .
+# 
+# http://www.example.org/muac/ontology/local-moo#hasTargetStructure
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Exchange> .
+<http://www.example.org/muac/ontology/local-moo#hasTargetStructure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isConveyedByFE
+<http://www.example.org/muac/ontology/local-moo#isConveyedByFE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isConveyedByFE> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isDirectPartOf
+<http://www.example.org/muac/ontology/local-moo#isDirectPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isDirectPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.example.org/muac/ontology/local-moo#isPartOf> .
+<http://www.example.org/muac/ontology/local-moo#isDirectPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#isDirectPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#isDirectPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#isDirectPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#isDirectPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> "This will be constrained in the class with min 2, transitive does not work with that constraint. To not loose the transitive part  that rolls up from lowest level till its highest level, this is created as a child but with Assymetric & Irreflexive. The isDirectPartOf is expected to roll up due to the parent. Should then onlu this type of link be used??" .
+# 
+# http://www.example.org/muac/ontology/local-moo#isGroupedInExchangeItem
+<http://www.example.org/muac/ontology/local-moo#isGroupedInExchangeItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isGroupedInExchangeItem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isGroupedInInterface
+<http://www.example.org/muac/ontology/local-moo#isGroupedInInterface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isGroupedInInterface> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isOperatedBy
+<http://www.example.org/muac/ontology/local-moo#isOperatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isOperatedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isOperatedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#operatesSystem> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isOwnedBy
+<http://www.example.org/muac/ontology/local-moo#isOwnedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isOwnedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isOwnedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#ownsAsset> .
+<http://www.example.org/muac/ontology/local-moo#isOwnedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isPartOf
+<http://www.example.org/muac/ontology/local-moo#isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#isPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#isPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isPerformedByStructure
+<http://www.example.org/muac/ontology/local-moo#isPerformedByStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isPerformedByStructure> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#performsAction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement
+<http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#performsFunction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isProvidedByStructure
+<http://www.example.org/muac/ontology/local-moo#isProvidedByStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedByStructure> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.example.org/muac/ontology/local-moo#provides> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedByStructure> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#isProvidedByStructure> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedByStructure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Desired_Characteristic> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedByStructure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement
+<http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.example.org/muac/ontology/local-moo#provides> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#providesCapability> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#System_Capability> .
+<http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isRealizedBy
+<http://www.example.org/muac/ontology/local-moo#isRealizedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isRealizedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isRealizedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#realizesInterface> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isResponsibilityOf
+<http://www.example.org/muac/ontology/local-moo#isResponsibilityOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isResponsibilityOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isResponsibilityOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#responsibleForTask> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isSequencedIn
+<http://www.example.org/muac/ontology/local-moo#isSequencedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSequencedIn> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/muac/ontology/local-moo#sequencesBlock> .
+<http://www.example.org/muac/ontology/local-moo#isSequencedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSequencedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSequencedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Action_Block> .
+<http://www.example.org/muac/ontology/local-moo#isSequencedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange
+<http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Function> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Functional_Exchange> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange
+<http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Structural_Exchange> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange
+<http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Function> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Functional_Exchange> .
+# 
+# http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange
+<http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Structural_Exchange> .
+# 
+# http://www.example.org/muac/ontology/local-moo#operatesSystem
+<http://www.example.org/muac/ontology/local-moo#operatesSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#operatesSystem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#operatesSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#operatesSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#operatesSystem> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+<http://www.example.org/muac/ontology/local-moo#operatesSystem> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#ownsAsset
+<http://www.example.org/muac/ontology/local-moo#ownsAsset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#ownsAsset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#ownsAsset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#performsAction
+<http://www.example.org/muac/ontology/local-moo#performsAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsAction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsAction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#performsAction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Action_Block> .
+# 
+# http://www.example.org/muac/ontology/local-moo#performsFunction
+<http://www.example.org/muac/ontology/local-moo#performsFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsFunction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#performsFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#performsFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Function> .
+# 
+# http://www.example.org/muac/ontology/local-moo#provides
+<http://www.example.org/muac/ontology/local-moo#provides> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.example.org/muac/ontology/local-moo#providesCapability
+<http://www.example.org/muac/ontology/local-moo#providesCapability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#providesCapability> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.example.org/muac/ontology/local-moo#provides> .
+<http://www.example.org/muac/ontology/local-moo#providesCapability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#providesCapability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#providesCapability> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#providesCapability> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#System_Capability> .
+# 
+# http://www.example.org/muac/ontology/local-moo#providesCharacteristic
+<http://www.example.org/muac/ontology/local-moo#providesCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#providesCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.example.org/muac/ontology/local-moo#provides> .
+<http://www.example.org/muac/ontology/local-moo#providesCharacteristic> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#providesCharacteristic> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Desired_Characteristic> .
+# 
+# http://www.example.org/muac/ontology/local-moo#realizesInterface
+<http://www.example.org/muac/ontology/local-moo#realizesInterface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#realizesInterface> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#realizesInterface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#realizesInterface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#realizesInterface> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Structural_Exchange> .
+<http://www.example.org/muac/ontology/local-moo#realizesInterface> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Interface> .
+# 
+# http://www.example.org/muac/ontology/local-moo#responsibleForTask
+<http://www.example.org/muac/ontology/local-moo#responsibleForTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#responsibleForTask> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#responsibleForTask> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+<http://www.example.org/muac/ontology/local-moo#responsibleForTask> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Task> .
+# 
+# http://www.example.org/muac/ontology/local-moo#sequencesBlock
+<http://www.example.org/muac/ontology/local-moo#sequencesBlock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/muac/ontology/local-moo#sequencesBlock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.example.org/muac/ontology/local-moo#sequencesBlock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.example.org/muac/ontology/local-moo#sequencesBlock> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> .
+<http://www.example.org/muac/ontology/local-moo#sequencesBlock> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/muac/ontology/local-moo#Action_Block> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/muac_onto/sequenceNum
+<http://example.org/muac_onto/sequenceNum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/muac_onto/sequenceNum> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/muac_onto/Phase> .
+<http://example.org/muac_onto/sequenceNum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://www.example.org/muac/ontology/local-moo#hasImplementationLevel
+<http://www.example.org/muac/ontology/local-moo#hasImplementationLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/muac/ontology/local-moo#hasImplementationLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Product> .
+<http://www.example.org/muac/ontology/local-moo#hasImplementationLevel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.example.org/muac/ontology/local-moo#is_MUAC
+<http://www.example.org/muac/ontology/local-moo#is_MUAC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/muac/ontology/local-moo#is_MUAC> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/muac/ontology/local-moo#Organizational_Element> .
+<http://www.example.org/muac/ontology/local-moo#is_MUAC> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://example.org/muac_onto/Mode
+<http://example.org/muac_onto/Mode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/muac_onto/Mode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Behavioral_Interval> .
+<http://example.org/muac_onto/Mode> <http://purl.org/dc/elements/1.1/source> "Wasson, C.S. (2011), 3.3.1 System Phases, Modes, and States: Solutions to Controversial Issues. INCOSE International Symposium, 21: 279-294. https://doi.org/10.1002/j.2334-5837.2011.tb01205.x" .
+<http://example.org/muac_onto/Mode> <http://www.w3.org/2000/01/rdf-schema#label> "Mode"@en .
+<http://example.org/muac_onto/Mode> <http://www.w3.org/2004/02/skos/core#definition> "An abstract label applied to a user selectable option that enables a set of use case-based system capabilities to be employed in conjunction with organizational processes and procedures to command and control (C2) a system, product, or service to achieve a specified set of mission objectives, outcomes, and levels of performance. Triggering events serve as entry and exit\ncriteria for transitioning into and out of a mode. Modes can have sub-modes." .
+<http://example.org/muac_onto/Mode> <http://www.w3.org/2004/02/skos/core#example> "When a system is in a failed state, the supervisor can make the decision to switch mode of operation from primary to fallback operations. This mode change causes the state of the fallback system to be Operational" .
+# 
+# http://example.org/muac_onto/Phase
+<http://example.org/muac_onto/Phase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/muac_onto/Phase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Behavioral_Interval> .
+<http://example.org/muac_onto/Phase> <http://purl.org/dc/elements/1.1/source> "Wasson, C.S. (2011), 3.3.1 System Phases, Modes, and States: Solutions to Controversial Issues. INCOSE International Symposium, 21: 279-294. https://doi.org/10.1002/j.2334-5837.2011.tb01205.x" .
+<http://example.org/muac_onto/Phase> <http://www.w3.org/2000/01/rdf-schema#label> "Phase"@en .
+<http://example.org/muac_onto/Phase> <http://www.w3.org/2004/02/skos/core#definition> "A designation applied to segments of the System / Product Life Cycle or Mission Lifecycle of a system, product – e.g., Pre-Mission, Mission, or Post-Mission. Phases may consist of sub-phases – e.g., an aircraft’s Mission Phase of operations may be partitioned into Phases of Flight (subphases) such as take-off, ascent, cruise, or land." .
+<http://example.org/muac_onto/Phase> <http://www.w3.org/2004/02/skos/core#example> "A flight consists of seven primary phases: preflight, taxi, takeoff, climb, cruise, descent and approach, and landing/roll-out" .
+<http://example.org/muac_onto/Phase> <http://www.w3.org/2004/02/skos/core#scopeNote> "Use phase only to describe lifecycle stages of a system, mission/operation i.e time sequencing is relevant" .
+# 
+# http://example.org/muac_onto/State
+<http://example.org/muac_onto/State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/muac_onto/State> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Behavioral_Interval> .
+<http://example.org/muac_onto/State> <http://purl.org/dc/elements/1.1/source> "Wasson, C.S. (2011), 3.3.1 System Phases, Modes, and States: Solutions to Controversial Issues. INCOSE International Symposium, 21: 279-294. https://doi.org/10.1002/j.2334-5837.2011.tb01205.x" .
+<http://example.org/muac_onto/State> <http://www.w3.org/2000/01/rdf-schema#label> "State"@en .
+<http://example.org/muac_onto/State> <http://www.w3.org/2004/02/skos/core#definition> "An attribute used to characterize the current logistical employment, status, or performance-base condition of a system, product, or service or system components at the element, subsystem, assembly, subassembly, etc. levels of abstraction. Based on principles of physics, “states” are observable, measurable, verifiable." .
+<http://example.org/muac_onto/State> <http://www.w3.org/2004/02/skos/core#editorialNote> "The state vs phase confusion is large e.g ICAO defines INCERFA, ALERFA as phases. This contradicts definitions of Wasson as  these designations represent condition-based safety or readiness conditions rather than planned, time-based segments of a mission, placing them under the definition of system states." .
+<http://example.org/muac_onto/State> <http://www.w3.org/2004/02/skos/core#example> "A system element is nominal state when it performs its intended functions. Physical failures or changes in its environment can cause it not to perform intended functions or even performed unintended functions then this system element is in a failed state." .
+<http://example.org/muac_onto/State> <http://www.w3.org/2004/02/skos/core#note> "Usually states are described using past-participle verbs, taxiing, cruising, operating. A flight during its taxi phase is in taxiing state. Phase and state can be confused as there is no discriminator as user control for states vs modes." .
+<http://example.org/muac_onto/State> <http://www.w3.org/2004/02/skos/core#scopeNote> "Use states to describe the active behavior of system elements or the outcome of their behaviors." .
+# 
+# http://www.example.org/muac/ontology/local-moo#Action_Block
+<http://www.example.org/muac/ontology/local-moo#Action_Block> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Action_Block> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Action_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Action_Element
+<http://www.example.org/muac/ontology/local-moo#Action_Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Action_Flow
+<http://www.example.org/muac/ontology/local-moo#Action_Flow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Action_Flow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Action_Element> .
+<http://www.example.org/muac/ontology/local-moo#Action_Flow> <http://www.w3.org/2000/01/rdf-schema#comment> "A sequencing of individual actions to achieve a higher level objective." .
+# 
+# http://www.example.org/muac/ontology/local-moo#Aircraft_System
+<http://www.example.org/muac/ontology/local-moo#Aircraft_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Aircraft_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#Aircraft_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Enterprise_System> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isPartOf> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow
+<http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Action_Flow> .
+<http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> .
+<http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow> <http://www.w3.org/2000/01/rdf-schema#comment> "A flow fragment, the arrow, only magnitude no direction" .
+# 
+# http://www.example.org/muac/ontology/local-moo#Behavioral_Interval
+<http://www.example.org/muac/ontology/local-moo#Behavioral_Interval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Business_Capability
+<http://www.example.org/muac/ontology/local-moo#Business_Capability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Business_Capability> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid2 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Enterprise_System> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Capability> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Business_Capability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Capability> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Capability
+<http://www.example.org/muac/ontology/local-moo#Capability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Capability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Desired_Characteristic> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow
+<http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Action_Flow> .
+<http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> <http://www.w3.org/2000/01/rdf-schema#comment> "A sequnced flow of atomic flows and the structural elements that perform them" .
+# 
+# http://www.example.org/muac/ontology/local-moo#Constraint
+<http://www.example.org/muac/ontology/local-moo#Constraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Constraint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Desired_Characteristic> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Data_Class
+<http://www.example.org/muac/ontology/local-moo#Data_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Data_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Data_Model_Element> .
+<http://www.example.org/muac/ontology/local-moo#Data_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "Description of an atomic Data Element. Example:\nAircraftPerformance\n- speed : m/s\n- rate_of_climb : m/s\n- thrus_specific_fuel_consumption: g/(s * kN)" .
+<http://www.example.org/muac/ontology/local-moo#Data_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "This is documented in ASN.1" .
+# 
+# http://www.example.org/muac/ontology/local-moo#Data_Model_Element
+<http://www.example.org/muac/ontology/local-moo#Data_Model_Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Data_Model_Element> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents foundational system information entities, resources, or state variables in isolation, independent of their communication or transport mechanisms." .
+# 
+# http://www.example.org/muac/ontology/local-moo#Desired_Characteristic
+<http://www.example.org/muac/ontology/local-moo#Desired_Characteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Enterprise_System
+<http://www.example.org/muac/ontology/local-moo#Enterprise_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Enterprise_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#Enterprise_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Aircraft_System> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasDirectPart> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Enterprise_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Operational_System> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasDirectPart> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Enterprise_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Organizational_Element> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasDirectPart> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Enterprise_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Support_System> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasPart> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Enterprise_System> <http://www.w3.org/2000/01/rdf-schema#comment> "Here definition is based on inverse relation hasPart as it is the highest level, it cannot be part of anything else, or at least for this scope of work." .
+# 
+# http://www.example.org/muac/ontology/local-moo#Exchange_Item
+<http://www.example.org/muac/ontology/local-moo#Exchange_Item> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Exchange_Item> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Data_Model_Element> .
+<http://www.example.org/muac/ontology/local-moo#Exchange_Item> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Data_Class> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#groupsDataClass> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Exchange_Item> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Functional_Exchange> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isConveyedByFE> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Exchange_Item> <http://www.w3.org/2000/01/rdf-schema#comment> "This is docuemented in MIDD" .
+<http://www.example.org/muac/ontology/local-moo#Exchange_Item> <http://www.w3.org/2000/01/rdf-schema#comment> "https://mbse-capella.org/resources/arcadia-reference/Arcadia%20Language%20-%20MetaModel.pdf\nAn ordered set of references to elements routed together, during an interaction or exchange between functions, components and actors. For MUAC this is the MIDD part of the data_flow i.e the communication and control objects?" .
+# 
+# http://www.example.org/muac/ontology/local-moo#External_Organization
+<http://www.example.org/muac/ontology/local-moo#External_Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#External_Organization> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid12 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#hasValue> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#is_MUAC> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Organizational_Element> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#External_Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Organizational_Element> .
+<http://www.example.org/muac/ontology/local-moo#External_Organization> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/muac/ontology/local-moo#Internal_Organization> .
+# 
+# http://www.example.org/muac/ontology/local-moo#External_Product
+<http://www.example.org/muac/ontology/local-moo#External_Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#External_Product> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid16 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#External_Organization> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isOwnedBy> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Product> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#External_Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Product> .
+<http://www.example.org/muac/ontology/local-moo#External_Product> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/muac/ontology/local-moo#Internal_Product> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Function
+<http://www.example.org/muac/ontology/local-moo#Function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Function> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Action_Block> .
+<http://www.example.org/muac/ontology/local-moo#Function> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Functional_Exchange
+<http://www.example.org/muac/ontology/local-moo#Functional_Exchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Functional_Exchange> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow> .
+<http://www.example.org/muac/ontology/local-moo#Functional_Exchange> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <http://www.example.org/muac/ontology/local-moo#Function> .
+_:genid21 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasSourceFunction> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Functional_Exchange> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#onClass> <http://www.example.org/muac/ontology/local-moo#Function> .
+_:genid22 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasTargetFunction> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Functional_Exchange> <http://www.w3.org/2000/01/rdf-schema#comment> "https://mbse-capella.org/resources/arcadia-reference/Arcadia%20Language%20-%20MetaModel.pdf\nA possible interaction between a source function and a destination function, likely to transmit exchange items through their output and input ports, respectively\n\nA Functional Exchange represents the connection (the 'what' and 'where') between two functions, defining the flow of data, material, or signals." .
+# 
+# http://www.example.org/muac/ontology/local-moo#Infra_Product
+<http://www.example.org/muac/ontology/local-moo#Infra_Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Infra_Product> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid23 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Support_System> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Product_System> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Product> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Infra_Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Product> .
+<http://www.example.org/muac/ontology/local-moo#Infra_Product> <http://www.w3.org/2000/01/rdf-schema#comment> "Sharing across partitions e.g electra, hvac, building" .
+# 
+# http://www.example.org/muac/ontology/local-moo#Interface
+<http://www.example.org/muac/ontology/local-moo#Interface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Data_Model_Element> .
+<http://www.example.org/muac/ontology/local-moo#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Exchange_Item> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#groupsExchangeItem> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Structural_Exchange> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isRealizedBy> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Interface> <http://www.w3.org/2000/01/rdf-schema#comment> "This would be covered in an Interface Definition Document" .
+# 
+# http://www.example.org/muac/ontology/local-moo#Internal_Organization
+<http://www.example.org/muac/ontology/local-moo#Internal_Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Internal_Organization> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid31 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#hasValue> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#is_MUAC> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Organizational_Element> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Internal_Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Organizational_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Internal_Product
+<http://www.example.org/muac/ontology/local-moo#Internal_Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Internal_Product> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid35 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Internal_Organization> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isOwnedBy> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Product> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Internal_Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Product> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Operational_Actor
+<http://www.example.org/muac/ontology/local-moo#Operational_Actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Operational_Actor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Organizational_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Operational_Environment
+<http://www.example.org/muac/ontology/local-moo#Operational_Environment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Operational_Environment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Desired_Characteristic> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Operational_Product
+<http://www.example.org/muac/ontology/local-moo#Operational_Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Operational_Product> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid39 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid41 .
+_:genid41 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Product_System> .
+_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Product> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Operational_Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Product> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Operational_System
+<http://www.example.org/muac/ontology/local-moo#Operational_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Operational_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#Operational_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+_:genid43 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Enterprise_System> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isPartOf> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Operations_Phase
+<http://www.example.org/muac/ontology/local-moo#Operations_Phase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Operations_Phase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/muac_onto/Phase> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Operator
+<http://www.example.org/muac/ontology/local-moo#Operator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Operator> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid44 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid46 .
+_:genid46 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Operational_System> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#operatesSystem> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Operator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Organizational_Element
+<http://www.example.org/muac/ontology/local-moo#Organizational_Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Organizational_Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+<http://www.example.org/muac/ontology/local-moo#Organizational_Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Enterprise_System> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Organizational_Process
+<http://www.example.org/muac/ontology/local-moo#Organizational_Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Organizational_Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid49 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid52 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid54 .
+_:genid54 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isResponsibilityOf> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Task> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#sequencesBlock> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Task> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#sequencesBlock> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Organizational_Process> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/muac/ontology/local-moo#System_Process> .
+<http://www.example.org/muac/ontology/local-moo#Organizational_Process> <http://www.w3.org/2000/01/rdf-schema#comment> "1. It is a composite flow.\n2.It must contain at least one business Task (ensuring it isn't an empty process).\n3.Crucially, every single block inside it must exclusively be a Task that has a assigned, responsible Operational_Actor attached to it." .
+# 
+# http://www.example.org/muac/ontology/local-moo#Performance
+<http://www.example.org/muac/ontology/local-moo#Performance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Performance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Desired_Characteristic> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Pilot
+<http://www.example.org/muac/ontology/local-moo#Pilot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Pilot> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid59 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid61 .
+_:genid61 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Aircraft_System> .
+_:genid61 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#operatesSystem> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Pilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Product
+<http://www.example.org/muac/ontology/local-moo#Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid63 .
+_:genid63 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid64 .
+_:genid64 <http://www.w3.org/2002/07/owl#unionOf> _:genid66 .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid65 .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Support_System> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Product_System> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid67 .
+_:genid67 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid68 .
+_:genid68 <http://www.w3.org/2002/07/owl#oneOf> _:genid71 .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid70 .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid69 .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Subsystem" .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Library" .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Component" .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasImplementationLevel> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Product_System
+<http://www.example.org/muac/ontology/local-moo#Product_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Product_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#Product_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid72 .
+_:genid72 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Operational_System> .
+_:genid72 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Shared_Product
+<http://www.example.org/muac/ontology/local-moo#Shared_Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Shared_Product> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid73 .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid73 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid76 .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid74 .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid75 .
+_:genid75 <http://www.w3.org/2002/07/owl#onClass> <http://www.example.org/muac/ontology/local-moo#Product_System> .
+_:genid75 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid75 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Product> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Shared_Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Product> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Structural_Element
+<http://www.example.org/muac/ontology/local-moo#Structural_Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Structural_Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid77 .
+_:genid77 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Action_Block> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#performsAction> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Structural_Exchange
+<http://www.example.org/muac/ontology/local-moo#Structural_Exchange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Structural_Exchange> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow> .
+<http://www.example.org/muac/ontology/local-moo#Structural_Exchange> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid78 .
+_:genid78 <http://www.w3.org/2002/07/owl#onClass> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+_:genid78 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid78 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasSourceStructure> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Structural_Exchange> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid79 .
+_:genid79 <http://www.w3.org/2002/07/owl#onClass> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+_:genid79 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid79 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#hasTargetStructure> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Support_Product
+<http://www.example.org/muac/ontology/local-moo#Support_Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Support_Product> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid80 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid83 .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid81 .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid82 .
+_:genid82 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Support_System> .
+_:genid82 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Product> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Support_Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Product> .
+<http://www.example.org/muac/ontology/local-moo#Support_Product> <http://www.w3.org/2000/01/rdf-schema#comment> "e.g GBS, Tools, Non-Critical Data feeders like DWH" .
+# 
+# http://www.example.org/muac/ontology/local-moo#Support_System
+<http://www.example.org/muac/ontology/local-moo#Support_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Support_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+<http://www.example.org/muac/ontology/local-moo#Support_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid84 .
+_:genid84 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Enterprise_System> .
+_:genid84 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isDirectPartOf> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/muac/ontology/local-moo#Support_System> <http://www.w3.org/2000/01/rdf-schema#comment> "A distinct, structured combination of hardware, software, processes, or personnel that interacts with the Operational System during its lifecycle to enable its availability, reliability, security, or continuous improvement. It does not directly produce the primary operational output (e.g., separating aircraft), but it provides the essential environment, data, or services required for the Operational System to do so." .
+<http://www.example.org/muac/ontology/local-moo#Support_System> <http://www.w3.org/2000/01/rdf-schema#comment> "Core Criteria for a Support System\n\nMission Indirectness: If the support system fails entirely, the Operational System doesn't instantly crash mid-operation, but the organization's ability to maintain, deploy, or legally operate that system degrades immediately.\n\nLifecycle Focus: It often operates on a different rhythm than the real-time operational loop—focusing instead on preparation, maintenance, training, or post-operational analysis.\n\nShared or Dedicated Infrastructure: It can be internal (e.g., a local test bed) or external (e.g., a commercial satellite communications network provider or third-party weather data feed" .
+# 
+# http://www.example.org/muac/ontology/local-moo#System_Capability
+<http://www.example.org/muac/ontology/local-moo#System_Capability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#System_Capability> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid85 .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid85 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid88 .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid86 .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid87 .
+_:genid87 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Operational_System> .
+_:genid87 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Capability> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#System_Capability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Capability> .
+# 
+# http://www.example.org/muac/ontology/local-moo#System_Element
+<http://www.example.org/muac/ontology/local-moo#System_Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#System_Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Structural_Element> .
+# 
+# http://www.example.org/muac/ontology/local-moo#System_Phase
+<http://www.example.org/muac/ontology/local-moo#System_Phase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#System_Phase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/muac_onto/Phase> .
+# 
+# http://www.example.org/muac/ontology/local-moo#System_Process
+<http://www.example.org/muac/ontology/local-moo#System_Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#System_Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid89 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid98 .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid96 .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid90 .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid91 .
+_:genid91 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid92 .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid92 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid95 .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid93 .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid94 .
+_:genid94 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#System_Element> .
+_:genid94 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Function> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid91 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#sequencesBlock> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid97 .
+_:genid97 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Function> .
+_:genid97 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#sequencesBlock> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Task
+<http://www.example.org/muac/ontology/local-moo#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Task> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Action_Block> .
+<http://www.example.org/muac/ontology/local-moo#Task> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid99 .
+_:genid99 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+_:genid99 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#isResponsibilityOf> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Technician
+<http://www.example.org/muac/ontology/local-moo#Technician> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Technician> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid100 .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid100 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid103 .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid101 .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid102 .
+_:genid102 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.example.org/muac/ontology/local-moo#Support_System> .
+_:genid102 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/muac/ontology/local-moo#operatesSystem> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.example.org/muac/ontology/local-moo#Technician> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Operational_Actor> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Use-Case
+<http://www.example.org/muac/ontology/local-moo#Use-Case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/muac/ontology/local-moo#Use-Case> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.example.org/muac/ontology/local-moo#Test_System
+<http://www.example.org/muac/ontology/local-moo#Test_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.example.org/muac/ontology/local-moo#Test_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/muac/ontology/local-moo#Support_System> .
+# 
+# http://www.example.org/muac/ontology/local-moo#Test_Tool
+<http://www.example.org/muac/ontology/local-moo#Test_Tool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.example.org/muac/ontology/local-moo#Test_Tool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/muac/ontology/local-moo#Product> .
+<http://www.example.org/muac/ontology/local-moo#Test_Tool> <http://www.example.org/muac/ontology/local-moo#isPartOf> <http://www.example.org/muac/ontology/local-moo#Test_System> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

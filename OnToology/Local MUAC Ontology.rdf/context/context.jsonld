@@ -1,0 +1,354 @@
+{
+  "@context" : {
+    "Operational_Actor" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Operational_Actor"
+    },
+    "Organizational_Element" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Organizational_Element"
+    },
+    "Data_Model_Element" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Data_Model_Element"
+    },
+    "External_Organization" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#External_Organization"
+    },
+    "isOperatedBy" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isOperatedBy",
+      "@type" : "@id"
+    },
+    "scopeNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#scopeNote"
+    },
+    "External_Product" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#External_Product"
+    },
+    "System_Capability" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#System_Capability"
+    },
+    "Support_Product" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Support_Product"
+    },
+    "groupsExchangeItem" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#groupsExchangeItem",
+      "@type" : "@id"
+    },
+    "Operational_Product" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Operational_Product"
+    },
+    "example" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#example"
+    },
+    "operatesSystem" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#operatesSystem",
+      "@type" : "@id"
+    },
+    "Operational_System" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Operational_System"
+    },
+    "isTargetOfStructureExchange" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isTargetOfStructureExchange",
+      "@type" : "@id"
+    },
+    "hasTargetFunction" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#hasTargetFunction",
+      "@type" : "@id"
+    },
+    "is_MUAC" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#is_MUAC",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasSourceStructure" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#hasSourceStructure",
+      "@type" : "@id"
+    },
+    "Product" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Product"
+    },
+    "Use-Case" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Use-Case"
+    },
+    "sequenceNum" : {
+      "@id" : "http://example.org/muac_onto/sequenceNum",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "isResponsibilityOf" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isResponsibilityOf",
+      "@type" : "@id"
+    },
+    "Business_Capability" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Business_Capability"
+    },
+    "provides" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#provides",
+      "@type" : "@id"
+    },
+    "performsFunction" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#performsFunction",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Internal_Product" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Internal_Product"
+    },
+    "Technician" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Technician"
+    },
+    "isPartOf" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isPartOf",
+      "@type" : "@id"
+    },
+    "hasPart" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#hasPart",
+      "@type" : "@id"
+    },
+    "Infra_Product" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Infra_Product"
+    },
+    "Enterprise_System" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Enterprise_System"
+    },
+    "conveysExchangeItem" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#conveysExchangeItem",
+      "@type" : "@id"
+    },
+    "Product_System" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Product_System"
+    },
+    "responsibleForTask" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#responsibleForTask",
+      "@type" : "@id"
+    },
+    "isPerformedBySystemElement" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isPerformedBySystemElement",
+      "@type" : "@id"
+    },
+    "Performance" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Performance"
+    },
+    "Aircraft_System" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Aircraft_System"
+    },
+    "Mode" : {
+      "@id" : "http://example.org/muac_onto/Mode"
+    },
+    "hasSourceFunction" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#hasSourceFunction",
+      "@type" : "@id"
+    },
+    "Interface" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Interface"
+    },
+    "isSourceOfFunctionalExchange" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isSourceOfFunctionalExchange",
+      "@type" : "@id"
+    },
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    },
+    "isConveyedByFE" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isConveyedByFE",
+      "@type" : "@id"
+    },
+    "Composite_Action_Flow" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Composite_Action_Flow"
+    },
+    "isProvidedByStructure" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isProvidedByStructure",
+      "@type" : "@id"
+    },
+    "System_Element" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#System_Element"
+    },
+    "performsAction" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#performsAction",
+      "@type" : "@id"
+    },
+    "Pilot" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Pilot"
+    },
+    "Constraint" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Constraint"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "Capability" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Capability"
+    },
+    "hasMode" : {
+      "@id" : "http://example.org/muac_onto/hasMode",
+      "@type" : "@id"
+    },
+    "isSourceOfStructureExchange" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isSourceOfStructureExchange",
+      "@type" : "@id"
+    },
+    "Data_Class" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Data_Class"
+    },
+    "System_Process" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#System_Process"
+    },
+    "providesCapability" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#providesCapability",
+      "@type" : "@id"
+    },
+    "Action_Block" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Action_Block"
+    },
+    "Phase" : {
+      "@id" : "http://example.org/muac_onto/Phase"
+    },
+    "Functional_Exchange" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Functional_Exchange"
+    },
+    "isGroupedInInterface" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isGroupedInInterface",
+      "@type" : "@id"
+    },
+    "definition" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#definition"
+    },
+    "groupsDataClass" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#groupsDataClass",
+      "@type" : "@id"
+    },
+    "editorialNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#editorialNote"
+    },
+    "System_Phase" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#System_Phase"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/elements/1.1/source"
+    },
+    "Exchange_Item" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Exchange_Item"
+    },
+    "Desired_Characteristic" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Desired_Characteristic"
+    },
+    "sequencesBlock" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#sequencesBlock",
+      "@type" : "@id"
+    },
+    "Action_Element" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Action_Element"
+    },
+    "Operator" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Operator"
+    },
+    "providesCharacteristic" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#providesCharacteristic",
+      "@type" : "@id"
+    },
+    "isPerformedByStructure" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isPerformedByStructure",
+      "@type" : "@id"
+    },
+    "hasPhase" : {
+      "@id" : "http://example.org/muac_onto/hasPhase",
+      "@type" : "@id"
+    },
+    "hasTargetStructure" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#hasTargetStructure",
+      "@type" : "@id"
+    },
+    "isRealizedBy" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isRealizedBy",
+      "@type" : "@id"
+    },
+    "isProvidedBySystemElement" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isProvidedBySystemElement",
+      "@type" : "@id"
+    },
+    "realizesInterface" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#realizesInterface",
+      "@type" : "@id"
+    },
+    "hasState" : {
+      "@id" : "http://example.org/muac_onto/hasState",
+      "@type" : "@id"
+    },
+    "Structural_Exchange" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Structural_Exchange"
+    },
+    "Shared_Product" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Shared_Product"
+    },
+    "Internal_Organization" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Internal_Organization"
+    },
+    "isGroupedInExchangeItem" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isGroupedInExchangeItem",
+      "@type" : "@id"
+    },
+    "State" : {
+      "@id" : "http://example.org/muac_onto/State"
+    },
+    "Operational_Environment" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Operational_Environment"
+    },
+    "Function" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Function"
+    },
+    "Behavioral_Interval" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Behavioral_Interval"
+    },
+    "Structural_Element" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Structural_Element"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Action_Flow" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Action_Flow"
+    },
+    "isTargetOfFunctionalExchange" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isTargetOfFunctionalExchange",
+      "@type" : "@id"
+    },
+    "Organizational_Process" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Organizational_Process"
+    },
+    "isOwnedBy" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isOwnedBy",
+      "@type" : "@id"
+    },
+    "hasImplementationLevel" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#hasImplementationLevel",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Support_System" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Support_System"
+    },
+    "Task" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Task"
+    },
+    "hasDirectPart" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#hasDirectPart",
+      "@type" : "@id"
+    },
+    "Operations_Phase" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Operations_Phase"
+    },
+    "Atomic_Action_Flow" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#Atomic_Action_Flow"
+    },
+    "isDirectPartOf" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isDirectPartOf",
+      "@type" : "@id"
+    },
+    "ownsAsset" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#ownsAsset",
+      "@type" : "@id"
+    },
+    "isSequencedIn" : {
+      "@id" : "http://www.example.org/muac/ontology/local-moo#isSequencedIn",
+      "@type" : "@id"
+    }
+  }
+}
